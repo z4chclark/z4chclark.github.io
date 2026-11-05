@@ -1,0 +1,131 @@
+---
+import Base from '../layouts/Base.astro';
+import { name, headline, location, tagline, about, links } from '../data/site';
+import { stack } from '../data/stack';
+import { projects } from '../data/projects';
+import { experience } from '../data/experience';
+
+const sections = [
+  { id: 'about', label: 'About' },
+  { id: 'stack', label: 'Stack' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'contact', label: 'Contact' },
+];
+---
+
+<Base>
+  <div class="layout">
+    <header class="side">
+      <div>
+        <h1>{name}</h1>
+        <p class="headline">{headline}</p>
+        <p class="location">{location}</p>
+        <p class="tagline">{tagline}</p>
+        <nav aria-label="Sections">
+          <ol>
+            {sections.map((s) => (
+              <li><a href={`#${s.id}`}>{s.label}</a></li>
+            ))}
+          </ol>
+        </nav>
+      </div>
+      <ul class="links">
+        {links.map((l) => (
+          <li>
+            <a href={l.href} data-todo={l.todo ? '' : undefined}>
+              {l.label}
+              {l.todo && <span class="todo">TODO</span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </header>
+
+    <main id="main">
+      <section id="about" aria-labelledby="about-h">
+        <h2 id="about-h">About</h2>
+        {about.map((p) => <p>{p}</p>)}
+      </section>
+
+      <section id="stack" aria-labelledby="stack-h">
+        <h2 id="stack-h">Stack</h2>
+        <dl class="stack">
+          {stack.map((g) => (
+            <div>
+              <dt>{g.area}</dt>
+              <dd>
+                <ul>
+                  {g.items.map((i) => (
+                    <li class={i.inProgress ? 'wip' : undefined}>
+                      {i.name}
+                      {i.inProgress && <span class="badge">in progress</span>}
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-h">
+        <h2 id="projects-h">Projects</h2>
+        <ol class="projects">
+          {projects.map((p) => (
+            <li>
+              <article>
+                <header>
+                  <h3>
+                    {p.href ? <a href={p.href}>{p.name}</a> : p.name}
+                  </h3>
+                  <span class="status">{p.status}</span>
+                </header>
+                <p class="one-liner">{p.oneLiner}</p>
+                <p class="proof"><strong>Proof:</strong> {p.proof}</p>
+                <p class="arch"><code>{p.architecture}</code></p>
+                <ul class="tags">
+                  {p.stack.map((t) => <li>{t}</li>)}
+                </ul>
+              </article>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section id="experience" aria-labelledby="experience-h">
+        <h2 id="experience-h">Experience</h2>
+        <ol class="timeline">
+          {experience.map((e) => (
+            <li data-todo={e.todo ? '' : undefined}>
+              <span class="period">{e.period}</span>
+              <div>
+                <h3>{e.role} · {e.org}</h3>
+                <p>{e.summary}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-h">
+        <h2 id="contact-h">Contact</h2>
+        <p>The fastest way to reach me is email. Résumé and profiles below.</p>
+        <ul class="contact-links">
+          {links.map((l) => (
+            <li>
+              <a href={l.href} data-todo={l.todo ? '' : undefined}>
+                {l.label}
+                {l.todo && <span class="todo">TODO</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <footer>
+        <p>Built with Astro. Static, no tracking.</p>
+      </footer>
+    </main>
+  </div>
+</Base>
