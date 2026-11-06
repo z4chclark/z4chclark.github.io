@@ -39,7 +39,7 @@ const required = [
   'Xin Lu Elementary School',
   'Santa Clara University',
   'B.S. Computer Science',
-  'Outside code: lifting in Taipei, learning Mandarin, watching Warriors basketball.',
+  'Outside code: lifting, learning Mandarin, watching Warriors basketball.',
 ];
 for (const value of required) {
   if (!html.includes(value)) failures.push(`missing confirmed content: ${value}`);

@@ -14,7 +14,7 @@ export const about = [
   'Software degree, backend focus. I build and ship real projects: an iPhone app in the hands of testers, a pronunciation-scoring API, and the multi-agent workflow I develop with every day.',
   'My part is the design and the judgement: I design the systems, integrate the APIs and services, direct and audit an AI coding workflow, and review, test and ship what it produces.',
   'Based in Taipei.',
-  'Outside code: lifting in Taipei, learning Mandarin, watching Warriors basketball.',
+  'Outside code: lifting, learning Mandarin, watching Warriors basketball.',
 ];
 
 // Links. Every `todo: true` entry is a placeholder: the real URL has not been provided yet.
