@@ -1,6 +1,6 @@
 // Site-wide constants. Edit here; every section reads from this file.
 
-export const name = 'Zachary Clark';
+export const name = 'Zach Clark';
 
 // Placeholder title: not final yet. Change this one line.
 export const headline = 'Backend Developer';

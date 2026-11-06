@@ -1,4 +1,4 @@
-# Zachary Clark: portfolio
+# Zach Clark: portfolio
 
 A static, text-first one-page portfolio built with [Astro](https://astro.build).
 

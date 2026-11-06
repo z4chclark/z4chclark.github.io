@@ -25,7 +25,8 @@ for (const id of ['about', 'stack', 'projects', 'experience', 'contact']) {
   if (!html.includes(`id="${id}"`)) failures.push(`missing section #${id}`);
 }
 
-if (!html.includes('Zachary Clark')) failures.push('name missing');
+if (!html.includes('Zach Clark')) failures.push('name missing');
+if (/zachary/i.test(html)) failures.push('old name "Zachary" still on the page');
 
 if (failures.length) {
   console.error('Content check failed:\n- ' + failures.join('\n- '));
