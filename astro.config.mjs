@@ -1,7 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// Static output. Set `site` to the real domain once one is chosen.
+// Static output, served by GitHub Pages at the user-site root.
 export default defineConfig({
   output: 'static',
+  site: 'https://z4chclark.github.io',
 });
