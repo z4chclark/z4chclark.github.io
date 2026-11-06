@@ -1,27 +1,30 @@
-// Experience timeline. PLACEHOLDERS: real entries come from the final resume.
-// Do not fill in employers or dates until they are confirmed.
+// Experience and education, newest first.
 
 export interface ExperienceEntry {
   period: string;
   role: string;
   org: string;
-  summary: string;
+  summary?: string;
   todo?: boolean;
 }
 
 export const experience: ExperienceEntry[] = [
   {
-    period: 'TODO: dates',
-    role: 'TODO: role',
-    org: 'TODO: organisation',
-    summary: 'TODO: one line from the final resume.',
-    todo: true,
+    period: 'Aug 2025 – Jul 2026',
+    role: 'Foreign English Teacher',
+    org: 'Xin Lu Elementary School, Taoyuan, Taiwan',
+    summary: 'Delivered structured English instruction to 100+ students across multiple grade levels.',
   },
   {
-    period: 'TODO: dates',
-    role: 'TODO: degree',
-    org: 'TODO: university',
-    summary: 'TODO: software degree, one line.',
-    todo: true,
+    period: 'Jun 2024',
+    role: 'B.S. Computer Science',
+    org: 'Santa Clara University, Santa Clara, CA',
+  },
+  {
+    period: 'Jul 2023 – Sep 2023',
+    role: 'Software Engineering Intern',
+    org: 'Aril Inc., Los Gatos, CA',
+    summary:
+      'Built a C++ netlist parser that automated extraction of electronic design data, with validation and error handling for malformed inputs.',
   },
 ];

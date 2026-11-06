@@ -28,6 +28,23 @@ for (const id of ['about', 'stack', 'projects', 'experience', 'contact']) {
 if (!html.includes('Zach Clark')) failures.push('name missing');
 if (/zachary/i.test(html)) failures.push('old name "Zachary" still on the page');
 
+// Confirmed content: these real values must be on the page.
+const required = [
+  'Backend Developer',
+  'https://github.com/z4chclark',
+  'https://www.linkedin.com/in/zclark9',
+  'Software Engineering Intern',
+  'Aril Inc.',
+  'Foreign English Teacher',
+  'Xin Lu Elementary School',
+  'Santa Clara University',
+  'B.S. Computer Science',
+  'Outside code: lifting in Taipei, learning Mandarin, watching Warriors basketball.',
+];
+for (const value of required) {
+  if (!html.includes(value)) failures.push(`missing confirmed content: ${value}`);
+}
+
 if (failures.length) {
   console.error('Content check failed:\n- ' + failures.join('\n- '));
   process.exit(1);

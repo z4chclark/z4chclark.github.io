@@ -101,7 +101,7 @@ const sections = [
               <span class="period">{e.period}</span>
               <div>
                 <h3>{e.role} · {e.org}</h3>
-                <p>{e.summary}</p>
+                {e.summary && <p>{e.summary}</p>}
               </div>
             </li>
           ))}
